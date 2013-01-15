@@ -1,4 +1,4 @@
-package s9301.projekt;
+package s9301.Services;
 
 /**
  * Hello world!
