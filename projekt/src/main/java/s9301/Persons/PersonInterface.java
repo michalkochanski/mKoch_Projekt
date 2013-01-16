@@ -1,7 +1,7 @@
 package s9301.Persons;
 
 public interface PersonInterface {
-	public String getIndex();
+	public int getIndex();
 	public String getFirstName();
 	public String getLastName();
 	public String getYearOfBorn();
@@ -12,5 +12,4 @@ public interface PersonInterface {
 	public void setLastName(String lastName);
 	public void setYearOfBorn(String yearOfBorn);
 	public void setAbout(String about);
-
 }

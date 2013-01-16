@@ -17,52 +17,43 @@ public class StudentClass implements PersonInterface {
 		String about = "";
 	}
 
+	public int getIndex() {
+		return index;
+	}
+
 	public String getFirstName() {
 		return firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public String getYearOfBorn() {
+		return yearOfBorn;
+	}
+
+	public String getAbout() {
+		return about;
+	}
+
+	public void setIndex(int index) {
+		this.index = index;
 	}
 
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
 
-	public String getIndex() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public String getLastName() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public String getYearOfBorn() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public String getAbout() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public void setIndex(int index) {
-		// TODO Auto-generated method stub
-		
-	}
-
 	public void setLastName(String lastName) {
-		// TODO Auto-generated method stub
-		
+		this.lastName = lastName;
 	}
 
 	public void setYearOfBorn(String yearOfBorn) {
-		// TODO Auto-generated method stub
-		
+		this.yearOfBorn = yearOfBorn;
 	}
 
 	public void setAbout(String about) {
-		// TODO Auto-generated method stub
-		
+		this.about= about;
 	}
-
 }

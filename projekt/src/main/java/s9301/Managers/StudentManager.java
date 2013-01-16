@@ -9,13 +9,7 @@ import s9301.Persons.StudentClass;
 import s9301.Services.DBconnector;
 import s9301.Services.DBreader;
 
-public class StudentManager implements ManagerInterface<StudentClass> {
-
-	public List<StudentClass> getAll() {
-		List<StudentClass> lista = new ArrayList<StudentClass>();
-
-		return lista;
-	}
+public class StudentManager implements ManagerInterface {
 
 	public void testRead() {
 		String query = "select * from test";
