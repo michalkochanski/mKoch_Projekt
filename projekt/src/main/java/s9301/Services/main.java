@@ -8,7 +8,7 @@ public class main {
 		StudentManager student = new StudentManager();
 
 		db.connect();
-		student.testRead();
+		student.studentsReadAll();
 
 	}
 }

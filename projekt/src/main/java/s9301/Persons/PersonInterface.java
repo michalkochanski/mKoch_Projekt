@@ -1,15 +1,17 @@
 package s9301.Persons;
 
 public interface PersonInterface {
-	public int getIndex();
+	public int getIdStudent();
 	public String getFirstName();
 	public String getLastName();
-	public String getYearOfBorn();
+	public int getYearOfBorn();
 	public String getAbout();
+	public int getIdGroup();
 
-	public void setIndex(int index);
+	public void setIdStudent(int idStudent);
 	public void setFirstName(String firstName);
 	public void setLastName(String lastName);
-	public void setYearOfBorn(String yearOfBorn);
+	public void setYearOfBorn(int yearOfBorn);
 	public void setAbout(String about);
+	public void setIdGroup(int idGroup);
 }

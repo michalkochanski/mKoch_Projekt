@@ -3,11 +3,11 @@ package s9301.Services;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class DBreader {
+public class DBeditor {
 	
 	private DBconnector db = new DBconnector();
 	
-	public ResultSet tableReader(String query)
+	public ResultSet tableEditor(String query)
 	{
 		ResultSet result = null;
 		try {

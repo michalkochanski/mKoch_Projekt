@@ -2,23 +2,25 @@ package s9301.Persons;
 
 public class StudentClass implements PersonInterface {
 
-	private int index;
+	private int idStudent;
 	private String firstName;
 	private String lastName;
-	private String yearOfBorn;
+	private int yearOfBorn;
 	private String about;
+	private int idGroup;
 	
 	public StudentClass()
 	{
-		int index = 0;
+		int idStudent = 0;
 		String firstName = "";
 		String lastName = "";
-		String yearOfBorn = "";
+		int yearOfBorn = 0;
 		String about = "";
+		int idGroup = 0;
 	}
 
-	public int getIndex() {
-		return index;
+	public int getIdStudent() {
+		return idStudent;
 	}
 
 	public String getFirstName() {
@@ -29,7 +31,7 @@ public class StudentClass implements PersonInterface {
 		return lastName;
 	}
 
-	public String getYearOfBorn() {
+	public int getYearOfBorn() {
 		return yearOfBorn;
 	}
 
@@ -37,8 +39,12 @@ public class StudentClass implements PersonInterface {
 		return about;
 	}
 
-	public void setIndex(int index) {
-		this.index = index;
+	public int getIdGroup() {
+		return idGroup;
+	}
+
+	public void setIdStudent(int idStudent) {
+		this.idStudent = idStudent;
 	}
 
 	public void setFirstName(String firstName) {
@@ -49,11 +55,15 @@ public class StudentClass implements PersonInterface {
 		this.lastName = lastName;
 	}
 
-	public void setYearOfBorn(String yearOfBorn) {
+	public void setYearOfBorn(int yearOfBorn) {
 		this.yearOfBorn = yearOfBorn;
 	}
 
 	public void setAbout(String about) {
-		this.about= about;
+		this.about = about;
+	}
+
+	public void setIdGroup(int idGroup) {
+		this.idGroup = idGroup;		
 	}
 }
