@@ -8,9 +8,8 @@ public class StudentClass implements PersonInterface {
 	private int yearOfBorn;
 	private String about;
 	private int idGroup;
-	
-	public StudentClass()
-	{
+
+	public StudentClass() {
 		int idStudent = 0;
 		String firstName = "";
 		String lastName = "";
@@ -64,6 +63,6 @@ public class StudentClass implements PersonInterface {
 	}
 
 	public void setIdGroup(int idGroup) {
-		this.idGroup = idGroup;		
+		this.idGroup = idGroup;
 	}
 }

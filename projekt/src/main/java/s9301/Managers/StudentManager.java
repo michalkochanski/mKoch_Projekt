@@ -2,11 +2,7 @@ package s9301.Managers;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
 
-import s9301.Persons.StudentClass;
-import s9301.Services.DBconnector;
 import s9301.Services.DBeditor;
 
 public class StudentManager implements StudentManagerInterface {
@@ -16,7 +12,7 @@ public class StudentManager implements StudentManagerInterface {
 
 		DBeditor dbedit = new DBeditor();
 
-		ResultSet result = dbedit.tableEditor(query);
+		ResultSet result = dbedit.tableViewer(query);
 
 		try {
 			while (result.next()) {
@@ -30,18 +26,35 @@ public class StudentManager implements StudentManagerInterface {
 		}
 	}
 
-	public void studentsAdd(String query) {
-		// TODO Auto-generated method stub
-		
+	public void studentsAdd(String firstName, String lastName, int yearOfBorn,
+			String about, int idGroup) {
+
+		String query = "INSERT INTO `students` (`firstName`,`lastName`,`yearOfBorn`,`about`,`idGroup`) VALUES ('"
+				+ firstName	+ "','"	+ lastName + "'," + yearOfBorn + ",'" + about + "'," + idGroup + ");";
+
+		DBeditor dbedit = new DBeditor();
+
+		dbedit.tableEditor(query);
 	}
 
-	public void studentsEdit(String query) {
-		// TODO Auto-generated method stub
+	public void studentsEdit(int idStudent, String firstName, String lastName,
+			int yearOfBorn, String about, int idGroup) {
 
+		String query = "UPDATE students SET `firstName` = '" + firstName
+				+ "', `lastName` = '" + lastName + "', `yearOfBorn` = "
+				+ yearOfBorn + ", `about` = '" + about + "', `idGroup` = "
+				+ idGroup + " WHERE `idStudent` = " + idStudent;
+
+		DBeditor dbedit = new DBeditor();
+
+		dbedit.tableEditor(query);
 	}
 
-	public void studentsRemove(String query) {
-		// TODO Auto-generated method stub
+	public void studentsRemove(int idStudent) {
+		String query = "delete from students where idStudent = " + idStudent;
 
+		DBeditor dbedit = new DBeditor();
+
+		dbedit.tableEditor(query);
 	}
 }

@@ -16,7 +16,7 @@ INSERT INTO `students` (`idStudent`,`firstName`,`lastName`,`yearOfBorn`,`about`,
 INSERT INTO `students` (`idStudent`,`firstName`,`lastName`,`yearOfBorn`,`about`,`idGroup`) VALUES (16,'Jakub','Rodny',1991,NULL,4);
 INSERT INTO `students` (`idStudent`,`firstName`,`lastName`,`yearOfBorn`,`about`,`idGroup`) VALUES (17,'Wacław','Rączka',1992,NULL,3);
 
-INSERT INTO `groups` (`idGroup`,`name`,`about`,`idStarosty`) VALUES (1,'Pracowicy','muszę wziąść od nich numery - pewnie zrobimy biznes',2);
+INSERT INTO `groups` (`idGroup`,`name`,`about`,`idStarosty`) VALUES (1,'Pracowicy','muszę wziąć od nich numery - pewnie zrobimy biznes',2);
 INSERT INTO `groups` (`idGroup`,`name`,`about`,`idStarosty`) VALUES (2,'Mądrzy','dobrze się uczą, ale w ogóle nie pogadasz',3);
 INSERT INTO `groups` (`idGroup`,`name`,`about`,`idStarosty`) VALUES (3,'Głupi','pogadasz, ale idioci',1);
 INSERT INTO `groups` (`idGroup`,`name`,`about`,`idStarosty`) VALUES (4,'Leserzy','tępię ich jak mogę, ale co zrobisz - im nie zależy',4);

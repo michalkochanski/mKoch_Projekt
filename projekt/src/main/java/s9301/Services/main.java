@@ -8,7 +8,20 @@ public class main {
 		StudentManager student = new StudentManager();
 
 		db.connect();
+		System.out.println("Pierwotna:");
 		student.studentsReadAll();
-
+		student.studentsAdd("test", "guy", 666, "testing", 1);
+		System.out.println("Po Dodaniu:");
+		student.studentsReadAll();
+		student.studentsEdit(9, "Patriszja2", "Awesome", 1988, "zagraniczna", 2);
+		System.out.println("Po edycji:");
+		student.studentsReadAll();
+		student.studentsRemove(22);
+		student.studentsRemove(21);
+		student.studentsRemove(23);
+		student.studentsRemove(24);
+		student.studentsRemove(25);
+		System.out.println("Po usunięciu:");
+		student.studentsReadAll();
 	}
 }
