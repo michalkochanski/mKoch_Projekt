@@ -15,11 +15,14 @@ public class StudentManager implements StudentManagerInterface {
 		ResultSet result = dbedit.tableViewer(query);
 
 		try {
+			System.out.println("idStud" + "\t" + "firstName" + "\t"
+					+ "lastName" + "\t" + "yearOfBorn" + "\t" + "idGroup"
+					+ "\t\t" + "about");
 			while (result.next()) {
-				System.out.println(result.getString(1) + ", "
-						+ result.getString(2) + ", " + result.getString(3)
-						+ ", " + result.getString(4) + ", "
-						+ result.getString(5) + ", " + result.getString(6));
+				System.out.println(result.getString(1) + "\t"
+						+ result.getString(2) + "\t\t" + result.getString(3)
+						+ "\t\t" + result.getString(4) + "\t\t"
+						+ result.getString(6) + "\t\t" + result.getString(5));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -30,7 +33,13 @@ public class StudentManager implements StudentManagerInterface {
 			String about, int idGroup) {
 
 		String query = "INSERT INTO `students` (`firstName`,`lastName`,`yearOfBorn`,`about`,`idGroup`) VALUES ('"
-				+ firstName	+ "','"	+ lastName + "'," + yearOfBorn + ",'" + about + "'," + idGroup + ");";
+				+ firstName
+				+ "','"
+				+ lastName
+				+ "',"
+				+ yearOfBorn
+				+ ",'"
+				+ about + "'," + idGroup + ");";
 
 		DBeditor dbedit = new DBeditor();
 
