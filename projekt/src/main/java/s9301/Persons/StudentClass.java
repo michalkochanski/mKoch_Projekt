@@ -1,6 +1,6 @@
 package s9301.Persons;
 
-public class StudentClass implements PersonInterface {
+public class StudentClass implements StudentInterface {
 
 	private int idStudent;
 	private String firstName;

@@ -1,6 +1,6 @@
 package s9301.Persons;
 
-public interface PersonInterface {
+public interface StudentInterface {
 	public int getIdStudent();
 
 	public String getFirstName();
