@@ -15,22 +15,18 @@ public class GroupClass implements GroupInterface {
 	}
 	
 	public int getIdGroup() {
-		// TODO Auto-generated method stub
 		return idGroup;
 	}
 
 	public String getName() {
-		// TODO Auto-generated method stub
 		return name;
 	}
 
 	public String getAbout() {
-		// TODO Auto-generated method stub
 		return about;
 	}
 
 	public int getIdStarosty() {
-		// TODO Auto-generated method stub
 		return idStarosty;
 	}
 
