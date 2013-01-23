@@ -1,12 +1,15 @@
 package s9301.Managers;
 
 import java.sql.ResultSet;
+import java.util.List;
 
+import s9301.Persons.GroupClass;
+import s9301.Persons.StudentClass;
 import s9301.Services.DBeditor;
 
-public class GroupManager implements GroupManagerInterface {
-
-	public void groupsRead() {
+public class GroupManager implements ManagerInterface<GroupClass> {
+	
+	public void ReadAll() {
 		String query = "select * from groups";
 		DBeditor dbedit = new DBeditor();
 
@@ -25,8 +28,8 @@ public class GroupManager implements GroupManagerInterface {
 		}
 	}
 
-	public void groupsRead(int idGroup) {
-		String query = "select * from groups where idGroup = " + idGroup;
+	public void ReadOne(int id) {
+		String query = "select * from groups where idGroup = " + id;
 		DBeditor dbedit = new DBeditor();
 
 		ResultSet result = dbedit.tableViewer(query);
@@ -43,32 +46,48 @@ public class GroupManager implements GroupManagerInterface {
 			e.printStackTrace();
 		}
 	}
-
-	public void groupsAdd(String name, String about, int idStarosty) {
+	
+	@Override
+	public void Add(GroupClass obj) {
+		GroupClass g = new GroupClass();
 		String query = "INSERT INTO `groups` (`name`,`about`,`idStarosty`) VALUES ('"
-				+ name + "','" + about + "'," + idStarosty + ");";
+				+ g.getName() + "','" + g.getAbout() + "'," + g.getIdStarosty() + ");";
+
+		DBeditor dbedit = new DBeditor();
+
+		dbedit.tableEditor(query);		
+	}
+
+	public void Edit(GroupClass obj) {
+		GroupClass g = new GroupClass();
+		String query = "UPDATE groups SET `name` = '" + g.getName() + "', `about` = '"
+				+ g.getAbout() + "', `idStarosty` = " + g.getIdStarosty()
+				+ " WHERE `idGroup` = " + g.getIdGroup();
 
 		DBeditor dbedit = new DBeditor();
 
 		dbedit.tableEditor(query);
 	}
 
-	public void groupsEdit(int idGroup, String name, String about, int idStarosty) {
-		String query = "UPDATE groups SET `name` = '" + name + "', `about` = '"
-				+ about + "', `idStarosty` = " + idStarosty
-				+ " WHERE `idGroup` = " + idGroup;
+	public void Remove(int id) {
+		String query = "delete from groups where idGroup = " + id;
 
 		DBeditor dbedit = new DBeditor();
 
-		dbedit.tableEditor(query);
+		dbedit.tableEditor(query);		
 	}
+	
+/*
+ * OLD METODS:
+ * 
+	public void groupsRead() {}
 
-	public void groupsRemove(int idGroup) {
-		String query = "delete from groups where idGroup = " + idGroup;
+	public void groupsRead(int idGroup) {}
 
-		DBeditor dbedit = new DBeditor();
+	public void groupsAdd(String name, String about, int idStarosty) {}
 
-		dbedit.tableEditor(query);
-	}
+	public void groupsEdit(int idGroup, String name, String about, int idStarosty) {}
 
+	public void groupsRemove(int idGroup) {}
+*/
 }

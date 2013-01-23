@@ -1,13 +1,14 @@
 package s9301.Managers;
 
 import java.sql.ResultSet;
+import java.util.List;
 
+import s9301.Persons.StudentClass;
 import s9301.Services.DBeditor;
 
-public class StudentManager implements StudentManagerInterface {
+public class StudentManager implements ManagerInterface<StudentClass> {
 
-
-	public void studentsRead() {
+	public void ReadAll() {
 		String query = "select * from students";
 
 		DBeditor dbedit = new DBeditor();
@@ -26,11 +27,11 @@ public class StudentManager implements StudentManagerInterface {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-		}		
+		}
 	}
 
-	public void studentsRead(int idStudent) {
-		String query = "select * from students where idStudent = " + idStudent;
+	public void ReadOne(int id) {
+		String query = "select * from students where idStudent = " + id;
 
 		DBeditor dbedit = new DBeditor();
 
@@ -49,44 +50,57 @@ public class StudentManager implements StudentManagerInterface {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 	}
 
-	public void studentsAdd(String firstName, String lastName, int yearOfBorn,
-			String about, int idGroup) {
-
+	public void Add(StudentClass obj) {
+		StudentClass s = new StudentClass();
 		String query = "INSERT INTO `students` (`firstName`,`lastName`,`yearOfBorn`,`about`,`idGroup`) VALUES ('"
-				+ firstName
+				+ s.getFirstName()
 				+ "','"
-				+ lastName
+				+ s.getLastName()
 				+ "',"
-				+ yearOfBorn
+				+ s.getYearOfBorn()
 				+ ",'"
-				+ about + "'," + idGroup + ");";
+				+ s.getAbout() + "'," + s.getIdGroup() + ");";
 
 		DBeditor dbedit = new DBeditor();
 
 		dbedit.tableEditor(query);
 	}
 
-	public void studentsEdit(int idStudent, String firstName, String lastName,
-			int yearOfBorn, String about, int idGroup) {
-
-		String query = "UPDATE students SET `firstName` = '" + firstName
-				+ "', `lastName` = '" + lastName + "', `yearOfBorn` = "
-				+ yearOfBorn + ", `about` = '" + about + "', `idGroup` = "
-				+ idGroup + " WHERE `idStudent` = " + idStudent;
-
-		DBeditor dbedit = new DBeditor();
-
-		dbedit.tableEditor(query);
-	}
-
-	public void studentsRemove(int idStudent) {
-		String query = "delete from students where idStudent = " + idStudent;
+	public void Edit(StudentClass obj) {
+		StudentClass s = new StudentClass();
+		String query = "UPDATE students SET `firstName` = '" + s.getFirstName()
+				+ "', `lastName` = '" + s.getLastName() + "', `yearOfBorn` = "
+				+ s.getYearOfBorn() + ", `about` = '" + s.getAbout() + "', `idGroup` = "
+				+ s.getIdGroup() + " WHERE `idStudent` = " + s.getIdStudent();
 
 		DBeditor dbedit = new DBeditor();
 
 		dbedit.tableEditor(query);
 	}
+
+	public void Remove(int id) {
+		String query = "delete from students where idStudent = " + id;
+
+		DBeditor dbedit = new DBeditor();
+
+		dbedit.tableEditor(query);
+	}
+	
+	/*
+	 * OLD METODS
+	 * 
+		public void studentsRead() {}
+
+		public void studentsRead(int idStudent) {}
+
+		public void studentsAdd(String firstName, String lastName, int yearOfBorn,
+				String about, int idGroup) {}
+
+		public void studentsEdit(int idStudent, String firstName, String lastName,
+				int yearOfBorn, String about, int idGroup) {}
+
+		public void studentsRemove(int idStudent) {}
+	*/
 }
