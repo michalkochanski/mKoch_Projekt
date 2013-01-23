@@ -1,13 +1,13 @@
 package s9301.Managers;
 
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import s9301.Services.DBeditor;
 
 public class StudentManager implements StudentManagerInterface {
 
-	public void studentsReadAll() {
+
+	public void studentsRead() {
 		String query = "select * from students";
 
 		DBeditor dbedit = new DBeditor();
@@ -26,7 +26,30 @@ public class StudentManager implements StudentManagerInterface {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+		}		
+	}
+
+	public void studentsRead(int idStudent) {
+		String query = "select * from students where idStudent = " + idStudent;
+
+		DBeditor dbedit = new DBeditor();
+
+		ResultSet result = dbedit.tableViewer(query);
+
+		try {
+			System.out.println("idStud" + "\t" + "firstName" + "\t"
+					+ "lastName" + "\t" + "yearOfBorn" + "\t" + "idGroup"
+					+ "\t\t" + "about");
+			while (result.next()) {
+				System.out.println(result.getString(1) + "\t"
+						+ result.getString(2) + "\t\t" + result.getString(3)
+						+ "\t\t" + result.getString(4) + "\t\t"
+						+ result.getString(6) + "\t\t" + result.getString(5));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
+		
 	}
 
 	public void studentsAdd(String firstName, String lastName, int yearOfBorn,

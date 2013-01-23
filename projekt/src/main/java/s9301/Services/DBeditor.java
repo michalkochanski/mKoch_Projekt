@@ -28,4 +28,24 @@ public class DBeditor {
 			System.out.println("Zapytanie tabeli ZAWIODŁO!");
 		}
 	}
+	
+	/*
+	 * Próby sprawdzania ostatnio wstawianego id przez auto increment - zakończone niepowodzeniem 
+	public int AutoIncrementCheck() {
+		ResultSet result = null;
+		int wynik = 0;
+		String query = "SELECT LAST_INSERT_ID();";
+		try {
+			PreparedStatement s = db.connect().prepareStatement(query);
+			result = s.executeQuery();
+			while (result.next()) {
+				System.out.println(wynik = result.getInt(1));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Zapytanie tabeli ZAWIODŁO!");
+		}
+		return wynik;
+	}
+	*/
 }

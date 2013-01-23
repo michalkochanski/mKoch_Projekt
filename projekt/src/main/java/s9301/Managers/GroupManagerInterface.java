@@ -2,11 +2,13 @@ package s9301.Managers;
 
 public interface GroupManagerInterface {
 	
-	public void groupsReadAll();
+	public void groupsRead();
+	
+	public void groupsRead(int idGroup);
 
-	public void groupAdd(String name, String about, int idStarosty);
+	public void groupsAdd(String name, String about, int idStarosty);
 
-	public void groupEdit(int idGroup, String name, String about, int idStarosty);
+	public void groupsEdit(int idGroup, String name, String about, int idStarosty);
 
-	public void groupRemove(int idGroup);
+	public void groupsRemove(int idGroup);
 }
